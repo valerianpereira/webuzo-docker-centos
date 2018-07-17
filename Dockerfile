@@ -1,11 +1,10 @@
-FROM centos:latest
+FROM ubuntu:latest
 LABEL maintainer "Valerian Pereira <valerianpereira25@gmail.com>"
 
 #Install Apache
-RUN yum -y install httpd
-
 #Install MySQL
-RUN yum -y install mysqld
+RUN apt update && \ 
+  apt -y install apache2 mysqld
 
 #Install PHP
 #Config Files and boot services
