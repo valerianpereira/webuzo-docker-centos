@@ -1,12 +1,6 @@
-FROM ubuntu:latest
-LABEL maintainer "Valerian Pereira <valerianpereira25@gmail.com>"
-
-#Install Apache
-#Install MySQL
-RUN apt update && \ 
-  apt -y install apache2 mysqld
-
-#Install PHP
-#Config Files and boot services
-#Execute sample app - Foo Bar
-
+FROM centos:latest
+RUN yum -y install wget
+RUN wget -N http://files.webuzo.com/install.sh && \
+	chmod 0755 install.sh && \
+	./install.sh
+ENTRYPOINT ['ls /usr/local/emps']
